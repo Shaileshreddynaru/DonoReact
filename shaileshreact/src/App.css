@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+    padding-top: 0; /* Remove top padding */
+    padding-bottom: 0; /* Remove bottom padding */
+}
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height */
+}
+
+header, footer {
+    width: 100%;
+}
+
+header {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 1%; /* Padding for header */
+}
+
+footer {
+    background-color: #343a40; /* Bootstrap dark color */
+    color: white;
+    text-align: center;
+    padding: 1rem 0; /* Padding for footer */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.table {
+    width: 100%;
+    margin: 20px 0; /* Margin for table */
+}
+
+.table th, .table td {
+    padding: 12px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+.table th {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+}
