@@ -54,7 +54,6 @@ const Header = () => {
                 DonorApp
             </Link>
             <div className="collapse navbar-collapse" style={{ display: 'flex', alignItems: 'center' }}>
-                <Link className="nav-link" to="/addpost" style={{ marginRight: '15px' }}>Add post</Link>
                 <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
                     {username && (
                         <span style={{ marginRight: '10px', fontWeight: 'bold' }}>
@@ -70,7 +69,7 @@ const Header = () => {
                             Logout
                         </button>
                     ) : (
-                        <Link className="btn btn-outline-primary" to="/register" style={{ padding: '5px 10px' }}>
+                        <Link className="btn btn-outline-primary" to="/login" style={{ padding: '5px 10px' }}>
                             Login
                         </Link>
                     )}

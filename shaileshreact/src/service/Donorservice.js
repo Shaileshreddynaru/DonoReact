@@ -2,7 +2,7 @@ import axios from 'axios';
 import axiosInstance from '../auth';
 
 
-const  DONOR__BASE_REAT_API_URL="http://localhost:8080/";
+const  DONOR__BASE_REAT_API_URL="http://localhost:8080/api";
 
 class Donorservice{
     getDonorin(){

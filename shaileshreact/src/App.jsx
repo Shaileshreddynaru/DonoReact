@@ -17,7 +17,7 @@ function App() {
         <Route path='/addpost' element={<AddPost />} />
         <Route path='/donorList' element={<ListComponent />} />
         <Route path='/donor' element={<Table />} />
-        <Route path='/' element={<Registration />} /> {/* Add route for registration */}
+        <Route path='/login' element={<Registration />} /> {/* Add route for registration */}
       </Routes>
       <Footer />
     </Router>

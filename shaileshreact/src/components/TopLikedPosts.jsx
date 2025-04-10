@@ -86,6 +86,16 @@ const TopLikedPosts = () => {
                     }}>
                         {isMobile ? '👍' : 'Upvoted'}
                     </Link>
+                    <Link to="/addpost" style={{
+                        padding: '10px',
+                        borderRadius: '5px',
+                        backgroundColor: '#e9ecef',
+                        textDecoration: 'none',
+                        color: '#212529',
+                        textAlign: isMobile ? 'center' : 'left'
+                    }}>
+                        {isMobile ? '✏️' : 'Add Post'}
+                    </Link>
                 </div>
             </div>
 
