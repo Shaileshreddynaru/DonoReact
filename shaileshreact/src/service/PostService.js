@@ -3,7 +3,7 @@ import cors from 'cors';
 import axiosInstance from '../auth';
 
 
-const  DONOR__BASE_REAT_API_URL="http://localhost:8080/post";
+const  DONOR__BASE_REAT_API_URL=`${import.meta.env.VITE_API_URL}post`;
 
 class PostService{
   
