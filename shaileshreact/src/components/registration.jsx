@@ -94,7 +94,7 @@ const Registration = () => {
                 </div>
                 <div class="mb-3">
                     <label htmlFor="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                         placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
