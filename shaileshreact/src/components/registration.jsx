@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AuthService from '../service/AuthService';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import Login from '../service/Login';
 
@@ -84,32 +85,38 @@ const Registration = () => {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px' }}>
-            <h2>{isLogin ? 'Login Form' : 'Registration Form'}</h2>
+        <div className="registration-wrapper d-flex justify-content-center align-items-start">
             <form onSubmit={isLogin ? handleLogin : handleRegistration}>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {success && <p style={{ color: 'green' }}>{success}</p>}
-                <input 
-                    type="text" 
-                    placeholder="Username" 
-                    value={username} 
-                    onChange={(e) => setUsername(e.target.value)} 
-                    required 
-                />
-                <input 
-                    type="password" 
-                    placeholder="Password" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                    required 
-                />
-            <button type="submit" disabled={loading}>
-                {loading ? 'Processing...' : isLogin ? 'Login' : 'Register'}
-            </button>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {success && <p style={{ color: 'green' }}>{success}</p>}
+                <div class="mb-3">
+                    <h2>{isLogin ? 'Login ' : 'Registration '}</h2>
+                </div>
+                <div class="mb-3">
+                    <label htmlFor="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label htmlFor="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button class="btn btn-primary" type="submit" disabled={loading}>
+                    {loading ? 'Processing...' : isLogin ? 'Login' : 'Register'}
+                </button>
+                <button onClick={() => setIsLogin(!isLogin)}>
+                    {isLogin ? 'Switch to Registration' : 'Switch to Login'}
+                </button>
             </form>
-            <button onClick={() => setIsLogin(!isLogin)}>
-                {isLogin ? 'Switch to Registration' : 'Switch to Login'}
-            </button>
         </div>
     );
 };

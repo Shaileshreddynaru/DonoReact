@@ -7,9 +7,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import TopLikedPosts from './components/TopLikedPosts';
 import AddPost from './components/addpost';
+import './App.css';
 
 function App() {
   return (
+    <div className="App">
     <Router>
       <Header />
       <Routes>
@@ -19,8 +21,11 @@ function App() {
         <Route path='/donor' element={<Table />} />
         <Route path='/login' element={<Registration />} /> {/* Add route for registration */}
       </Routes>
+      <footer>
       <Footer />
+      </footer>
     </Router>
+    </div>
   );
 }
 
