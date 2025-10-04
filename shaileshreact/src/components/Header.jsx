@@ -65,19 +65,17 @@ const Header = () => {
                     </Link>
                     <Link to="/" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Home</Link>
                     {username && (
-                        <Link to="/addpost" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Add Post</Link>
+                        <>
+                            <Link to="/addpost" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Add Post</Link>
+                            <Link to="/in" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Posts</Link>
+                        </>
                     )}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                     {username && (
-                        <>
-                            <span style={{ marginRight: '10px', fontWeight: 'bold', color: '#007bff' }}>
-                                Welcome, {username}
-                            </span>
-                            <Link to="/in" className="btn btn-warning" style={{ fontWeight: 600, color: '#212529', background: '#ffe066', border: 'none' }}>
-                                <FontAwesomeIcon icon={faThumbsUp} style={{ marginRight: 6 }} /> Upvoted
-                            </Link>
-                        </>
+                        <span style={{ marginRight: '10px', fontWeight: 600, color: '#343a40', fontSize: 17, letterSpacing: 0.5, background: '#e3f2fd', padding: '6px 18px', borderRadius: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }}>
+                            Welcome, {username}
+                        </span>
                     )}
                     {username ? (
                         <button 
