@@ -22,3 +22,15 @@ axiosInstance.interceptors.request.use(
   }
 );
 export default axiosInstance;
+
+
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+     
+      window.location.href = '/in';
+    }
+    return Promise.reject(error);
+  }
+);
