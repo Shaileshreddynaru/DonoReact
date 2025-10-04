@@ -41,8 +41,8 @@ const Registration = () => {
             setError('Username must be at least 4 characters');
             return false;
         }
-        if (!/^[a-zA-Z0-9_]+$/.test(username)) {
-            setError('Username can only contain letters, numbers and underscores');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username)) {
+            setError('Username can only contain email format');
             return false;
         }
         if (password.length < 6) {
