@@ -56,16 +56,22 @@ const Header = () => {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#add8e6', padding: '10px' }}>
-            <Link className="navbar-brand" to="/">
-                <img src="/vite.svg" style={{ height: '40px', marginRight: '15px' }} />
-                DonorApp
-            </Link>
-            <div className="collapse navbar-collapse" style={{ display: 'flex', alignItems: 'center' }}>
-                <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
+        <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#add8e6', padding: '10px 30px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+            <div className="container-fluid" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <Link className="navbar-brand" to="/" style={{ display: 'flex', alignItems: 'center', fontWeight: 700, fontSize: 22, color: '#007bff', textDecoration: 'none' }}>
+                        <img src="/vite.svg" style={{ height: '40px', marginRight: '15px' }} alt="logo" />
+                        DonorApp
+                    </Link>
+                    <Link to="/" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Home</Link>
+                    {username && (
+                        <Link to="/addpost" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Add Post</Link>
+                    )}
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                     {username && (
                         <>
-                            <span style={{ marginRight: '10px', fontWeight: 'bold' }}>
+                            <span style={{ marginRight: '10px', fontWeight: 'bold', color: '#007bff' }}>
                                 Welcome, {username}
                             </span>
                             <Link to="/in" className="btn btn-warning" style={{ fontWeight: 600, color: '#212529', background: '#ffe066', border: 'none' }}>
