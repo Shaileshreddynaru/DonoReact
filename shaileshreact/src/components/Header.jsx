@@ -63,11 +63,11 @@ const Header = () => {
                         <img src="/vite.svg" style={{ height: '40px', marginRight: '15px' }} alt="logo" />
                         DonorApp
                     </Link>
-                    <Link to="/" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Home</Link>
+                    <Link to="/" className="custom-nav-link">Home</Link>
                     {username && (
                         <>
-                            <Link to="/addpost" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Add Post</Link>
-                            <Link to="/in" className="nav-link" style={{ fontWeight: 500, color: '#212529', fontSize: 18, textDecoration: 'none' }}>Posts</Link>
+                            <Link to="/addpost" className="custom-nav-link">Add Post</Link>
+                            <Link to="/in" className="custom-nav-link">Posts</Link>
                         </>
                     )}
                 </div>

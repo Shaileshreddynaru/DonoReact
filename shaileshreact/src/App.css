@@ -1,3 +1,23 @@
+/* Custom Navbar Styles */
+.custom-nav-link {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-weight: 500;
+    color: #212529;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-right: 6px;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    display: inline-block;
+    position: relative;
+}
+.custom-nav-link:hover, .custom-nav-link.active {
+    background: #007bff;
+    color: #fff !important;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
 * {
     box-sizing: border-box;
 }
