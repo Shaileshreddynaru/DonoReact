@@ -14,9 +14,9 @@ import './App.css';
    return (
      <div className="home-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', padding: '2rem' }}>
        <img src="/vite.svg" alt="Donor App Logo" style={{ width: 120, marginBottom: 24 }} />
-       <h1 style={{ color: '#007bff', fontWeight: 700, marginBottom: 16 }}>Welcome to Donor Management System</h1>
+       <h1 style={{ color: '#007bff', fontWeight: 700, marginBottom: 16 }}>Welcome to DonorApp</h1>
        <p style={{ maxWidth: 600, fontSize: 18, color: '#333', textAlign: 'center', marginBottom: 24 }}>
-         Our Donor Management System helps you easily manage, track, and connect with donors. Register, log in, and view top liked posts, add new donations, and see all donor lists in one place. Secure, fast, and user-friendly for both organizations and donors.
+         Our DonorApp helps you easily manage, track, and connect with donors. Register, log in, and view top liked posts, add new donations, and see all donor lists in one place. Secure, fast, and user-friendly for both organizations and donors.
        </p>
        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Helping Hands" style={{ width: 320, borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }} />
      </div>
