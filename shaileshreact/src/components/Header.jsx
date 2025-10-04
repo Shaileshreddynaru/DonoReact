@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from 'react-router-dom';
 import ThreeLine from './threeLine';
 import jwtDecode from 'jwt-decode';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     const [username, setUsername] = useState(null);
@@ -62,9 +64,14 @@ const Header = () => {
             <div className="collapse navbar-collapse" style={{ display: 'flex', alignItems: 'center' }}>
                 <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
                     {username && (
-                        <span style={{ marginRight: '10px', fontWeight: 'bold' }}>
-                            Welcome, {username}
-                        </span>
+                        <>
+                            <span style={{ marginRight: '10px', fontWeight: 'bold' }}>
+                                Welcome, {username}
+                            </span>
+                            <Link to="/in" className="btn btn-warning" style={{ fontWeight: 600, color: '#212529', background: '#ffe066', border: 'none' }}>
+                                <FontAwesomeIcon icon={faThumbsUp} style={{ marginRight: 6 }} /> Upvoted
+                            </Link>
+                        </>
                     )}
                     {username ? (
                         <button 
