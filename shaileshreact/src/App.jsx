@@ -1,4 +1,5 @@
 import * as React from 'react';
+import jwtDecode from 'jwt-decode';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Registration from './components/registration'; // Import the Registration component
 import ListComponent from './components/ListComponent';
@@ -12,25 +13,40 @@ import './App.css';
 function App() {
   React.useEffect(() => {
     let timeout;
-    const INACTIVITY_LIMIT = 15 * 60 * 1000; // 15 minutes
-
-    const resetTimer = () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
+    function setLogoutTimer() {
+      const token = localStorage.getItem('jwtToken');
+      if (!token) return;
+      try {
+        const decoded = jwtDecode(token);
+        if (decoded.exp) {
+          const expiresAt = decoded.exp * 1000;
+          const now = Date.now();
+          if (expiresAt > now) {
+            timeout = setTimeout(() => {
+              localStorage.removeItem('jwtToken');
+              window.dispatchEvent(new Event('authChange'));
+              window.location.href = '/';
+            }, expiresAt - now);
+          } else {
+            // Token already expired
+            localStorage.removeItem('jwtToken');
+            window.dispatchEvent(new Event('authChange'));
+            window.location.href = '/';
+          }
+        }
+      } catch (e) {
+        // Invalid token, force logout
         localStorage.removeItem('jwtToken');
         window.dispatchEvent(new Event('authChange'));
-        window.location.href = '';
-      }, INACTIVITY_LIMIT);
-    };
-
-    // List of events that indicate user activity
-    const events = ['mousemove', 'keydown', 'mousedown', 'touchstart', 'scroll'];
-    events.forEach(event => window.addEventListener(event, resetTimer));
-    resetTimer();
-
+  window.location.href = '/';
+      }
+    }
+    setLogoutTimer();
+    // Listen for login/logout events to reset timer
+    window.addEventListener('authChange', setLogoutTimer);
     return () => {
       clearTimeout(timeout);
-      events.forEach(event => window.removeEventListener(event, resetTimer));
+      window.removeEventListener('authChange', setLogoutTimer);
     };
   }, []);
 
