@@ -56,7 +56,7 @@ const TopLikedPosts = () => {
 
     return (
         <div style={{ width: '100%', minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', background: '#dae0e6' }}>
-            <h2 style={{ fontWeight: 700, color: '#ff4500', marginBottom: 24, letterSpacing: 1 }}>Top Liked Posts</h2>
+            <h2 style={{ fontWeight: 700, color: '#00b3ffff', marginBottom: 24, letterSpacing: 1 }}>Top Liked Posts</h2>
             {posts.sort((a, b) => b.post_likes - a.post_likes).map(post => (
                 <div key={post.post_id} style={{
                     display: 'flex',
