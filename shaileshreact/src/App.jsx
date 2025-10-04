@@ -19,7 +19,7 @@ function App() {
       timeout = setTimeout(() => {
         localStorage.removeItem('jwtToken');
         window.dispatchEvent(new Event('authChange'));
-        window.location.href = '/';
+        window.location.href = '';
       }, INACTIVITY_LIMIT);
     };
 
