@@ -12,9 +12,15 @@ const Header = () => {
         if (token) {
             try {
                 const decoded = jwtDecode(token);
-                setUsername(decoded.username || decoded.sub);
+                // Check for token expiration (exp is in seconds)
+                if (decoded.exp && Date.now() >= decoded.exp * 1000) {
+                    setUsername(null);
+                } else {
+                    setUsername(decoded.username || decoded.sub);
+                }
             } catch (error) {
                 console.error('Error decoding token:', error);
+                setUsername(null);
             }
         } else {
             setUsername(null);

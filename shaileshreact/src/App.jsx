@@ -10,21 +10,45 @@ import AddPost from './components/addpost';
 import './App.css';
 
 function App() {
+  React.useEffect(() => {
+    let timeout;
+    const INACTIVITY_LIMIT = 15 * 60 * 1000; // 15 minutes
+
+    const resetTimer = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        localStorage.removeItem('jwtToken');
+        window.dispatchEvent(new Event('authChange'));
+        window.location.href = '/';
+      }, INACTIVITY_LIMIT);
+    };
+
+    // List of events that indicate user activity
+    const events = ['mousemove', 'keydown', 'mousedown', 'touchstart', 'scroll'];
+    events.forEach(event => window.addEventListener(event, resetTimer));
+    resetTimer();
+
+    return () => {
+      clearTimeout(timeout);
+      events.forEach(event => window.removeEventListener(event, resetTimer));
+    };
+  }, []);
+
   return (
     <div className="App">
-    <Router>
-      <Header />
-      <Routes>
-        <Route path='/in' element={<TopLikedPosts />} />
-        <Route path='/addpost' element={<AddPost />} />
-        <Route path='/donorList' element={<ListComponent />} />
-        <Route path='/donor' element={<Table />} />
-        <Route path='/login' element={<Registration />} /> {/* Add route for registration */}
-      </Routes>
-      <footer>
-      <Footer />
-      </footer>
-    </Router>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path='/in' element={<TopLikedPosts />} />
+          <Route path='/addpost' element={<AddPost />} />
+          <Route path='/donorList' element={<ListComponent />} />
+          <Route path='/donor' element={<Table />} />
+          <Route path='/login' element={<Registration />} /> {/* Add route for registration */}
+        </Routes>
+        <footer>
+          <Footer />
+        </footer>
+      </Router>
     </div>
   );
 }
