@@ -58,7 +58,8 @@ const ListComponent=()=>{
       }
       return (
         <>
-        <form className="form">
+        <div className="registration-wrapper d-flex justify-content-center align-items-start">
+        <form className="p-4 bg-white border rounded shadow mt-5" style={{border: '2px solid #007bff', boxShadow: '0 0 10px rgba(0,123,255,0.15)', marginTop: '40px'}}>
             <div className="mb-3">
                 <label className="form-label">Name:</label>
                 <input 
@@ -97,9 +98,10 @@ const ListComponent=()=>{
                 />
                 {errors.amount && <div className="invalid-feedback">{errors.amount}</div>}
             </div>
-            <button type="submit" className="btn btn-primary" onClick={(e) => readDonor(e)}>Submit</button>
+            <button type="submit" className="btn btn-primary" onClick={(e) => readDonor(e)}>Pay</button>
 
           </form>
+          </div>
         </>
       )
 }

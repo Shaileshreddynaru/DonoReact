@@ -86,7 +86,7 @@ const Registration = () => {
 
     return (
         <div className="registration-wrapper d-flex justify-content-center align-items-start">
-            <form onSubmit={isLogin ? handleLogin : handleRegistration}>
+            <form onSubmit={isLogin ? handleLogin : handleRegistration} className="p-4 bg-white border rounded shadow mt-5" style={{border: '2px solid #007bff', boxShadow: '0 0 10px rgba(0,123,255,0.15)', marginTop: '40px'}}>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {success && <p style={{ color: 'green' }}>{success}</p>}
                 <div class="mb-3">

@@ -17,6 +17,7 @@ const Table = () => {
   
   return (
     <>
+    <div className="registration-wrapper d-flex justify-content-center align-items-start">
       <table className="table">
 
         <thead>
@@ -42,6 +43,7 @@ const Table = () => {
           )}
         </tbody>
       </table>
+      </div>
     </>
   );
 };
