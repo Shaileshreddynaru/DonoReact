@@ -55,8 +55,8 @@ const TopLikedPosts = () => {
     }, []);
 
     return (
-        <div style={{ width: '100%', minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', background: '#dae0e6' }}>
-            <h2 style={{ fontWeight: 700, color: '#00b3ffff', marginBottom: 24, letterSpacing: 1 }}>Top Liked Posts</h2>
+        <div style={{ width: '100%', minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', background: '#e3f0fb' }}>
+            <h2 style={{ fontWeight: 700, color: '#007bff', marginBottom: 24, letterSpacing: 1 }}>Top Liked Posts</h2>
             {posts.sort((a, b) => b.post_likes - a.post_likes).map(post => (
                 <div key={post.post_id} style={{
                     display: 'flex',
@@ -73,8 +73,8 @@ const TopLikedPosts = () => {
                     fontFamily: 'Segoe UI, Arial, sans-serif',
                 }}>
                     {/* Upvote/Downvote bar */}
-                    <div style={{ background: '#f8f9fa', width: 56, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '12px 0', gap: 8 }}>
-                        <button onClick={() => handleLike(post.post_id)} disabled={post.liked} style={{ background: 'none', border: 'none', cursor: post.liked ? 'not-allowed' : 'pointer', color: post.liked ? '#28a745' : '#878a8c', fontSize: 22, marginBottom: 2 }}>
+                    <div style={{ background: '#e3f0fb', width: 56, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '12px 0', gap: 8 }}>
+                        <button onClick={() => handleLike(post.post_id)} disabled={post.liked} style={{ background: 'none', border: 'none', cursor: post.liked ? 'not-allowed' : 'pointer', color: post.liked ? '#007bff' : '#878a8c', fontSize: 22, marginBottom: 2 }}>
                             <FontAwesomeIcon icon={faArrowUp} />
                         </button>
                         <span style={{ fontWeight: 700, color: '#222', fontSize: 18 }}>{post.post_likes}</span>
@@ -102,7 +102,7 @@ const TopLikedPosts = () => {
                                 <button style={{ background: 'none', border: 'none', color: '#878a8c', fontWeight: 500, fontSize: 15, display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
                                     <FontAwesomeIcon icon={faShare} /> Share
                                 </button>
-                                <button onClick={goToDonorList} style={{ background: '#ff4500', color: '#fff', border: 'none', padding: '6px 16px', borderRadius: '5px', fontWeight: 500, fontSize: 15, display: 'flex', alignItems: 'center', gap: 6 }}>
+                                <button onClick={goToDonorList} style={{ background: '#007bff', color: '#fff', border: 'none', padding: '6px 16px', borderRadius: '5px', fontWeight: 500, fontSize: 15, display: 'flex', alignItems: 'center', gap: 6 }}>
                                     <FontAwesomeIcon icon={faGift} /> Donate
                                 </button>
                             </div>
